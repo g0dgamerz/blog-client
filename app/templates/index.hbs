@@ -1,12 +1,13 @@
 {{page-title "Index"}}
 test
 <ul>
-{{#each @model as |post|}}
+{{#each @model as |blog|}}
 {{!-- previously it used to be
 {{#link-to "blog" post.id}} --}}
-<LinkTo @route="blog" @model="{{post.id}}">
-<li>{{post.title}}</li>
+<LinkTo @route="blog" @model="{{blog.id}}">
+<li>{{blog.title}}</li>
 </LinkTo>
+<button type="button" onclick={{action "deletePost" blog}}>Delete</button>
 {{/each}}
 </ul>
 {{outlet}}
