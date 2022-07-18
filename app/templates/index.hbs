@@ -2,7 +2,11 @@
 test
 <ul>
 {{#each @model as |post|}}
+{{!-- previously it used to be
+{{#link-to "blog" post.id}} --}}
+<LinkTo @route="blog" @model="{{post.id}}">
 <li>{{post.title}}</li>
+</LinkTo>
 {{/each}}
 </ul>
 {{outlet}}

@@ -8,6 +8,12 @@ export default class ApplicationAdapter extends Adapter {
     // eslint-disable-next-line ember/no-jquery
     return $.get(url);
   }
+  findRecord(store, type, id) {
+    console.log(id);
+    let url = `https://localhost:7083/${this.namespace}/${type.modelName}/${id}`;
+    // eslint-disable-next-line ember/no-jquery
+    return $.get(url);
+  }
   // namespace = 'api';
   // host = 'https://localhost:7083';
   // pathForType(blog) {
