@@ -20,6 +20,12 @@ export default class ApplicationAdapter extends Adapter {
     let data = {};
     let serializer = store.serializerFor(type.modelName);
     serializer.serializeIntoHash(data, type, snapshot);
+    return $.ajax({
+      type: 'POST',
+      url: `https://localhost:7083/${this.namespace}/${type.modelName}`,
+      data: JSON.stringify(data.blog),
+      contentType: 'application/json',
+    })
   }
   // namespace = 'api';
   // host = 'https://localhost:7083';
@@ -41,7 +47,6 @@ export default class ApplicationAdapter extends Adapter {
   // Error: Assertion Failed:
   // No serializer was found for 'blog' and no 'application'
   // serializer was found as a fallback
-
 
   //to make this request we can call destoryrecord() on our model
   //calling destroyRecord() on the model maps to deleteRecord() on the adapter

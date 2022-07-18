@@ -9,4 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   //we can add path with dynamic section as below
   this.route('blog', { path: '/blog/:id' });
+  this.route('create', { path: '/post/new' });
 });

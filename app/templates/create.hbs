@@ -1,0 +1,13 @@
+{{page-title "Create"}}
+<form onsubmit={{action "createBlog"}}>
+  <div>
+    <label for="title">Title</label>
+    <Input id="title" @value={{this.title}} />
+  </div>
+  <div>
+    <label for="body">Body</label>
+    <Textarea rows="8" cols="80" id="body" @value={{this.body}} />
+  </div>
+  <button type="submit">Publish</button>
+</form>
+{{outlet}}
