@@ -20,12 +20,13 @@ export default class ApplicationAdapter extends Adapter {
     let data = {};
     let serializer = store.serializerFor(type.modelName);
     serializer.serializeIntoHash(data, type, snapshot);
+    // eslint-disable-next-line ember/no-jquery
     return $.ajax({
       type: 'POST',
       url: `https://localhost:7083/${this.namespace}/${type.modelName}`,
       data: JSON.stringify(data.blog),
       contentType: 'application/json',
-    })
+    });
   }
   // namespace = 'api';
   // host = 'https://localhost:7083';

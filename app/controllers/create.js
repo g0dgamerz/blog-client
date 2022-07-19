@@ -14,6 +14,8 @@ export default class CreateController extends Controller {
     // To save the record, save() needs to be
     //called on the record to persist those changes via a POST /api/blog
     // request,
-    blog.save();
+    blog.save().then(() => {
+      this.transitionToRoute('index');
+    });
   }
 }
