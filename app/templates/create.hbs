@@ -1,13 +1,16 @@
 {{page-title "Create"}}
-<form onsubmit={{action "createBlog"}}>
-  <div>
-    <label for="title">Title</label>
-    <Input id="title" @value={{this.title}} />
+
+
+<form onsubmit={{action "createBlog"}} style="width: 70%;" class="mx-auto">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <Input id="title" @value={{this.title}} class="form-control"/>
   </div>
-  <div>
-    <label for="body">Body</label>
-    <Textarea rows="8" cols="80" id="body" @value={{this.body}} />
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    <Textarea class="form-control" rows="8" cols="80" id="body" @value={{this.body}} />
   </div>
-  <button type="submit">Publish</button>
+  <button type="submit" class="btn btn-primary">Publish</button>
 </form>
+
 {{outlet}}

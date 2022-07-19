@@ -1,6 +1,48 @@
-{{page-title "BlogClient"}}
-<nav>
-<LinkTo @route="index">Home</LinkTo>
-<LinkTo @route="create">Write a Blog</LinkTo>
+{{page-title 'BlogClient'}}
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+  <div class='container-fluid'>
+    <a class='navbar-brand' href='#'>
+      <img
+        src='https://raw.githubusercontent.com/emberjs/website/master/source/images/brand/ember_Ember-Light.png'
+        alt=''
+        width='100'
+        height='30'
+        class='d-inline-block align-text-top'
+      />
+      CRUD
+    </a>
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#navbarNav'
+      aria-controls='navbarNav'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarNav'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <LinkTo
+            @route='index'
+            class='nav-link active'
+            aria-current='page'
+          >Home</LinkTo>
+
+        </li>
+
+      </ul>
+
+      <LinkTo class='nav-link float-end' @route='create'><button
+          type='button'
+          class='btn btn-warning rounded-pill'
+          style='margin-right:10px'
+        ><i class='fa-solid fa-square-plus'></i> Write a Blog</button></LinkTo>
+
+    </div>
+  </div>
 </nav>
+
 {{outlet}}

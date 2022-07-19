@@ -1,14 +1,33 @@
-{{page-title "Index"}}
-test
-<ul>
-{{#each @model as |blog|}}
-{{!-- previously it used to be
+{{page-title 'Index'}}
+<center>
+<div class='col-sm-6'>
+  {{#each @model as |blog|}}
+    <div class='row mt-5'>
+      <div class='card'>
+        {{!-- previously it used to be
 {{#link-to "blog" post.id}} --}}
-<LinkTo @route="blog" @model={{blog.id}}>
-<li>{{blog.title}}</li>
-</LinkTo>
-<button type="button" onclick={{action "deletePost" blog}}>Delete</button>
-<LinkTo @route="edit" @model={{blog.id}}>Edit</LinkTo>
-{{/each}}
-</ul>
+        <LinkTo @route='blog' @model={{blog.id}}>
+
+          <div class='card-body'>
+            <h5 class='card-title'>{{blog.title}}</h5>
+          </div>
+
+        </LinkTo>
+        <button
+          type='button'
+          class='cb btn btn-danger'
+          onclick={{action 'deletePost' blog}}
+        >Delete</button>
+        <br />
+        <LinkTo @route='edit' @model={{blog.id}} class='cb btn btn-success'>Edit</LinkTo>
+        <br />
+      </div>
+
+    </div>
+
+    <br />
+  {{/each}}
+</div>
+</center>
+
 {{outlet}}
