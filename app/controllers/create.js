@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 
 export default class CreateController extends Controller {
   @service store;
+  @service router;
   @action createBlog(event) {
     event.preventDefault();
     console.log(this.title, this.body);
@@ -15,7 +16,7 @@ export default class CreateController extends Controller {
     //called on the record to persist those changes via a POST /api/blog
     // request,
     blog.save().then(() => {
-      this.transitionToRoute('index');
+      this.router.transitionTo('index');
     });
   }
 }

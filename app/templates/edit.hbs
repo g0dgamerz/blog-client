@@ -1,0 +1,13 @@
+{{page-title "Edit"}}
+<form onsubmit={{action "editPost" }}>
+    <div>
+    <label for="title">Title</label>
+    <Input id="title" @value={{@model.title}} />
+  </div>
+  <div>
+    <label for="body">Body</label>
+    <Textarea rows="8" cols="80" id="body" @value={{@model.body}} />
+  </div>
+  <button type="submit">Update</button>
+</form>
+{{outlet}}

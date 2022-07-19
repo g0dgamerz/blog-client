@@ -10,4 +10,5 @@ Router.map(function () {
   //we can add path with dynamic section as below
   this.route('blog', { path: '/blog/:id' });
   this.route('create', { path: '/post/new' });
+  this.route('edit', { path: '/post/:id/edit' });
 });
